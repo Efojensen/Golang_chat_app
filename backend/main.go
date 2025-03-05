@@ -47,9 +47,12 @@ func setupRoutes() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Simple server")
 	})
+
+	http.HandleFunc("/ws", serveWs)
 }
 
 func main() {
+	fmt.Println("Chat App v0.01")
 	setupRoutes()
 	http.ListenAndServe(":8080", nil)
 }
