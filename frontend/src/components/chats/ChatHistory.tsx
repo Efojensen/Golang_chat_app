@@ -6,8 +6,9 @@ interface ChatHistoryProps {
 
 class ChatHistory extends Component<ChatHistoryProps> {
     render() {
+        console.log(this.props.chatHistory)
         const messages = this.props.chatHistory.map((msg, index) => (
-            <p key={index}>{msg.data}</p>
+            <Message key={index} message={msg.data}/>
         ));
 
         return (
